@@ -1,0 +1,38 @@
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+    height: 750px;
+  }
+  
+  .vertical-menu a {
+    background-color: #542e71; /* Grey background color */
+    color: white; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #c67ace; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: #c67ace; /* Add a green color to the "active/current" link */
+    color: Black;
+    font-weight: bold;
+  }
+   .usericon
+   {
+     width:75px;
+     height:85px;
+     border-radius: 100%;
+     text-align: center;
+     position: relative;
+     left: 50px;
+   }
+  .card-img-top {
+    text-align: center;
+    position: relative;
+  }
+  .card {
+    text-align: center;
+  }

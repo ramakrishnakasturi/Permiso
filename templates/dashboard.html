@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'dash.css' %}">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #eee">
+
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-2" style="position: relative;right:210px;">
+        <div class="vertical-menu" style="background-color: #542e71;">
+          <a href="#" class="active">
+            <span style="color: white;">
+              <i class="fab fa-product-hunt fa-2x"></i>
+            </span>
+            
+          <h5 style="color: white;position: relative;bottom: 23px;left:33px;">ermiso</h5>
+          </a>
+          <img src="{% static 'usericon2.png' %}" class="usericon" style="padding-top:20px;">
+          <a href="#">User info</a>
+          <a href="#">Graphs</a>
+        </div>
+      </div>
+      <div class="col-4" style="position:relative;right:5px;padding-top:80px;">
+        <div class="card" style="width: 18rem;">
+          <img style="height:50%;width:100%" class="card-img-top" src="{% static 'usericon2.png' %}" alt="Card image cap">
+          <div class="card-body" style="background-color: #c67ace;color: Black;">
+            <h5 class="card-title">Number of request</h5>
+            <p class="card-text">These are the number of requests for the authorities {{n}}.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" style="padding-top:50px;position:relative;left:20px;">
+        <canvas style="width:200px;height:200px;" id="myChart" width="200" height="200"></canvas>
+        <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: {{label|safe}},
+              datasets: [{
+                label: 'Votes',
+                data:{{data|safe}},
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+        </script>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

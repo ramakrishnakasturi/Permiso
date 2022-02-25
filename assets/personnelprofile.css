@@ -1,0 +1,17 @@
+.usericon2
+   {
+     width:75px;
+     height:85px;
+     border-radius: 100%;
+     text-align: center;
+     position: relative;
+     left: 50px;
+   }
+  .card-img-top {
+    text-align: center;
+    position: relative;
+  }
+  .card{
+      text-align: center;
+    
+  }
